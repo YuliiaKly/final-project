@@ -1,0 +1,121 @@
+<!--
+    Final Project
+    author: Yuliia Klymenko	
+    date:   Dec. 2021 
+-->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dice Game</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/style1.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i|Righteous" rel="stylesheet">
+<script src="scripts/dice.js" defer></script>
+<script src="scripts/jquery-3.4.1.min.js" defer></script>
+<script src="scripts/index.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="content-wrap">
+        <h1>Dice Game</h1>
+        <img id="picture" class="Player" src="images/igralnaya-kost.gif" >
+        </div>
+        <p id='outputd'></p>
+    </header>
+    
+    <main>
+    <div class="content-wrap">
+
+    <!-- buttons with rules -->
+    <div class="buttonClass">
+        <button class="btn1">How to play</button>
+    </div>
+    <div class="rule">
+        <div class="popupRule" >
+            <h2>Rules of Play</h2>
+                        <p>The user and the computer each roll a pair of dice 3 times. </br>
+                            Each round player and the computer will roll a pair of dice and the score for that round will be the sum of the dice. </br>
+                            If any of the players two dice comes up as a 1 then the score for that round for the player is 0. </br> 
+                            If the player rolls a pair of the same numbers then the players score is the total of the two dice times 2.</br> 
+                            The player with the highest total score at the end of the 3 rounds wins the game!
+                        </p>
+            <span class="close">
+            <i class="fa fa-close">X</i>
+            </span>
+        </div>
+    </div>
+            
+        <!-- Board game -->
+        <div class="gameBoard">
+            <!-- Player 1 -->
+            <div class="play">
+                <h2>You</h2>
+                <div class="dice" id="dice">
+                    <img src="images/1_dot_dice.png" id="dice1" alt="first dice">
+                    <img src="images/1_dot_dice.png" id="dice2" alt="second dice">
+                </div>
+                <div class="total">
+                    <div class="totalscore">
+                        <h3>Score this round:</h3>
+                        <p class="score" id="player1Round">0</p>
+                    </div>
+                    <div class="totalscore">
+                        <h3>Total Score:</h3>
+                        <p class="score" id="player1Total">0</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Computer -->
+            <div class="play">
+                <h2>Computer</h2>
+                <div class="dice" id="dice">
+                    <img src="images/1_dot_dice.png" id="dice3" alt="first dice">
+                    <img src="images/1_dot_dice.png" id="dice4" alt="second dice">
+                </div>
+                <div class="total">
+                    <div class="totalscore">
+                        <h3>Score this round: </h3>
+                        <p class="score" id="computerRound">0</p>
+                    </div>
+                    <div class="totalscore">
+                        <h3>Total Score: </h3>
+                        <p class="score" id="computerTotal">0</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="popUp" id="popUp" hidden>
+                <div class="popUpContainer">
+                    <h1 id="winner"></h1>
+                    <div id="output"></div>
+                    <button class="btn" id="playAgain" onclick="location.reload(); return false;">Play Again</button>
+                </div>
+            </div>
+        </div>   
+        
+    <div id="rollNum">    
+    <p>Roll Number: <span id="rollNumber">0</span></p>
+    </div>
+
+<div class="buttonClass">
+    <button class="btn" id="newGame" onclick="location.reload(); return false;">
+        <i class="fas fa-sync"></i>New Game</button>
+    <button class="btn" id="button-roll">
+        <i class="fas fa-dice"></i>Roll Dice</button>
+
+</div>
+        
+        
+    </main>
+<footer>
+    © Yuliia Klymenko 2021.
+</footer>
+    
+    </body>
+
+</html>

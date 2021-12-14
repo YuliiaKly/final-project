@@ -1,0 +1,267 @@
+@import "variables";
+
+@mixin rounded-shaded-box($xoffset, $yoffset, $rounded-corners, $border-color){
+    box-shadow:$xoffset $yoffset 5px $primary_color;	  
+    border-radius:$rounded-corners;    
+    border:3px solid $border-color;    
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100%;
+    background: $primary_color;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{ font-size: 3.1rem;
+    text-align: center;
+    color: $light;
+    margin: 0; 	}
+h2{ font-size: 2.2rem;
+    margin-bottom: 10px;
+    margin-top: 5px; 	}
+h3{ font-size: 2rem;
+    margin: 0; 	}
+
+
+
+.btn, .btn1 {
+    padding: 10px;
+    @include rounded-shaded-box(5px, 5px, 16px, $primary_color);
+    cursor: pointer;
+    width: 225px;
+    height: 55px;
+    background-color: $btn_color;
+    color: $light;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 25px;
+    margin-bottom: 5px;
+}
+
+.btn:hover, .btn1:hover{
+	filter:brightness(1.3);
+	background-color: $third_color;
+	color: black;
+}
+
+.buttonClass {
+    text-align: center;
+
+    
+    p {
+        padding: 15px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        background-color: $light;
+        @include rounded-shaded-box(5px, 5px, 30px, $primary_color);
+
+    }
+}
+
+.content-wrap {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    max-width: 1000px;
+
+    #picture {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: -39px;
+    }
+
+    .rule {
+        position: absolute;
+        .popupRule{
+            display:block;
+            min-height:250px;
+            background:#fff;
+            border-radius:5px;
+            margin:0 auto;
+            z-index:999;
+            overflow:hidden;
+            -webkit-transform:translateY(-800%);
+            transform:translateY(-800%);
+            -moz-box-shadow: 0px 0px 20px rgba(56,56,56,.2);
+            -webkit-box-shadow: 0px 0px 20px rgba(56,56,56,.2);
+            box-shadow: 0px 0px 20px rgba(56,56,56,.2);
+            text-align:center;   
+            position:relative;
+            -webkit-transition: all 900ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 900ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+            padding: 50px;
+            border-radius: 30px;
+            background-color: $secondary_color;
+          
+          p{
+            padding: 5px;
+            line-height: 2rem;
+          }
+          .close{
+            position:absolute;
+            top:0px;
+            right:15px;
+            font-size:.9em;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 20px;;
+            cursor:pointer;
+            color:$third_color;
+            -webkit-transition:.5s;
+            transition:.5s;
+
+            
+          }
+          
+
+      } }
+
+    .gameBoard {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 100%;
+        text-align: center;
+        .play {
+            color: $light;
+        }
+
+        #dice {
+            margin-bottom: 10px;
+        }
+
+        .total {
+            background-color: $light;
+            color: $black;
+            margin-right: 50px;
+            margin-left: 50px;
+
+            .totalscore {
+                padding: 15px;
+
+                .score {
+                    font-size: 2rem;
+                    margin: 0;
+                }
+            }
+        }
+
+    }
+
+    #rollNum {
+        text-align: center;
+        margin: 10px;
+
+        p {
+            background: $light;
+            width: 250px;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+
+}
+#popUp {
+    text-align: center;
+    line-height: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($primary_color, .60);
+    .popUpContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 50px;
+        border-radius: 30px;
+        background-color: $secondary_color;
+        h1 {
+            color: $black;
+            margin-bottom: 30px;
+        }
+    }
+    span {
+        color: $light;
+    }
+}
+#popup_rules, #howToPlay {
+    position: absolute;
+    
+    width: 50%;
+    max-width: 630px;
+    min-width: 320px;
+    height: auto;
+    z-index: 2000;
+    
+      background-color: $secondary_color;
+      transform: scale(0)  rotate(720deg);
+      transition: 0.5s ease all;
+      padding: 50px;
+      line-height: 2rem;
+      border-radius: 6px;
+      box-shadow: 5px 5px 5px 0 rgba(0,0,0,.2);
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      margin-left: -300px;
+      margin-top: -250px;
+      
+
+    h2 {
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+    }
+    button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        background: transparent;
+
+        .fab {
+            font-size: 25px;
+        }
+    }
+}
+
+
+  .overlay{
+    overflow-x:hidden;
+    overflow-y:hidden;
+     -webkit-transition:all 3s ease-in-out;
+     transition:all 3s ease-in-out;
+  }
+  
+  .overlay::before{
+      content: " ";
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 8;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .5);
+     -webkit-transition:3s;
+     transition:3s ;
+  }
+
+  footer {
+    background-color: $secondary_color;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+  }
